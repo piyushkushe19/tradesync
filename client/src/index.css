@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-canvas: #f3f5f9;
+  --color-ink: #0b1b3a;
+  --color-ink-soft: #44546f;
+  --color-ink-faint: #7a8699;
+  --color-line: #e2e7ef;
+  --color-brand: #1f4fd8;
+  --color-brand-soft: #eaf0ff;
+  --color-ok: #0c8a58;
+  --color-ok-soft: #e4f5ed;
+  --color-warn: #a96a05;
+  --color-warn-soft: #fff4dc;
+  --color-bad: #c23b3b;
+  --color-bad-soft: #fdeaea;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+@keyframes shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+.skeleton {
+  background: linear-gradient(90deg, #eef1f6 25%, #e3e8f0 37%, #eef1f6 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.6s ease infinite;
+  border-radius: 4px;
+}
+@media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }

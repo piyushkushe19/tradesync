@@ -1,0 +1,26 @@
+{
+  "name": "tradesync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TradeSync - BSE trade synchronization dashboard (MERN, BullMQ, SSE)",
+  "workspaces": ["server", "client"],
+  "scripts": {
+    "infra:up": "docker compose up -d --wait",
+    "infra:down": "docker compose down",
+    "dev": "concurrently -k -n exchange,api,worker,client -c blue,green,yellow,magenta \"npm run dev:exchange -w server\" \"npm run dev:api -w server\" \"npm run dev:worker -w server\" \"npm run dev -w client\"",
+    "dev:exchange": "npm run dev:exchange -w server",
+    "dev:api": "npm run dev:api -w server",
+    "dev:worker": "npm run dev:worker -w server",
+    "dev:client": "npm run dev -w client",
+    "start:exchange": "npm run start:exchange -w server",
+    "start:api": "npm run start:api -w server",
+    "start:worker": "npm run start:worker -w server",
+    "test": "npm test -w server",
+    "lint": "npm run lint -w server && npm run lint -w client",
+    "build": "npm run build -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": { "node": ">=20" }
+}

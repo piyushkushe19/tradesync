@@ -1,0 +1,34 @@
+{
+  "name": "tradesync-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:api": "node --watch src/server.js",
+    "dev:worker": "node --watch src/worker.js",
+    "dev:exchange": "node --watch src/exchange/server.js",
+    "start:api": "node src/server.js",
+    "start:worker": "node src/worker.js",
+    "start:exchange": "node src/exchange/server.js",
+    "test": "vitest run",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "bullmq": "^5.34.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "ioredis": "^5.4.2",
+    "mongoose": "^8.9.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "globals": "^15.14.0",
+    "supertest": "^7.0.0",
+    "vitest": "^2.1.8"
+  }
+}

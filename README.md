@@ -4,8 +4,6 @@ A MERN dashboard that synchronizes trades from a (mock) BSE exchange whose full 
 
 > **The solution in one line:** no HTTP request ever waits for the pull. `POST /api/sync` enqueues a BullMQ job and returns **202** in milliseconds; a separate worker process runs the pull; the browser learns about completion through **Server-Sent Events**, then fetches the new data over short REST calls. No polling, no cron.
 
-See [ARCHITECTURE.md](./ARCHITECTURE.md) for diagrams and design rationale, and [DEMO_SCRIPT.md](./DEMO_SCRIPT.md) for the video walkthrough script.
-
 ## Assignment requirements → where they are met
 
 | Requirement | Implementation |
